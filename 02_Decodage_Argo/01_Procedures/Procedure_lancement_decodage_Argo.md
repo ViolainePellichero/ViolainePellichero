@@ -582,43 +582,63 @@ avec notamment les attributs globaux :
 Le journal d'exécution correspondant est disponible dans `output/log`.
 
 
-Pour visualiser les données décodées et stockées dans les fichiers .nc, voici des élèments de code Matlab :
+Pour visualiser les données décodées et stockées dans les fichiers .nc, voici des éléments de code Matlab :
+
 ``` matlab
-f = 'C:/Coriolis_Argo/decArgo_demo/output/nc/6902892/profiles/BR6902892_001.nc';
+folder = 'C:/Coriolis_Argo/decArgo_demo/output/nc/6902892/profiles/';
 
-% Informations générales
-cycle = ncread(f,'CYCLE_NUMBER');
-direction = ncread(f,'DIRECTION');
-juld = ncread(f,'JULD');
-lat = ncread(f,'LATITUDE');
-lon = ncread(f,'LONGITUDE');
-dataMode = ncread(f,'DATA_MODE');
-
-% Mesures
-pres = ncread(f,'PRES');
-temp = ncread(f,'TEMP_DOXY');
-doxy = ncread(f,'DOXY');
+files = dir([folder 'R*.nc']);
 
 figure;
 
-for i = 1:size(pres,2)
+subplot(1,2,1);
+hold on;
+grid on;
+box on;
+title('Profils de température CTD');
+xlabel('Température (°C)');
+ylabel('Pression (dbar)');
+set(gca,'YDir','reverse');
 
-    valid = pres(:,i) ~= 99999 & temp(:,i) ~= 99999;
+subplot(1,2,2);
+hold on;
+grid on;
+box on;
+title('Profils de salinité CTD');
+xlabel('Salinité');
+ylabel('Pression (dbar)');
+set(gca,'YDir','reverse');
 
-    subplot(1,size(pres,2),i)
-    plot(temp(valid,i),pres(valid,i),'-o')
-    set(gca,'YDir','reverse')
-    xlabel('Température (°C)')
-    ylabel('Pression (dbar)')
-    title(['Cycle ',num2str(cycle(i))])
-    grid on
+for k = 1:length(files)
 
+    f = [folder files(k).name];
+
+    try
+        P = double(ncread(f,'PRES'));
+        T = double(ncread(f,'TEMP'));
+        S = double(ncread(f,'PSAL'));
+
+        % Valeurs manquantes
+        P(P == 99999) = NaN;
+        T(T == 99999) = NaN;
+        S(S == 99999) = NaN;
+
+        % Tracé de chaque profil
+        subplot(1,2,1);
+        plot(T,P,'r');
+
+        subplot(1,2,2);
+        plot(S,P,'b');
+
+    catch
+        fprintf('Fichier ignoré : %s\n',files(k).name);
+    end
 end
 
+sgtitle('Float 6902892 - Ensemble des profils CTD');
+
 ```
-
-
-
+![Profils de température et de salinité décodés par la chaine Argo](Figures/figure_exemple.png)
 
 ## 11. Références et sources
 
