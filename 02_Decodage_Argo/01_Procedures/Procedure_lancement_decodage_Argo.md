@@ -86,7 +86,7 @@ C:\Coriolis_Argo\
 │   └── output\
 │
 ├── Run_Argo_chain_vio.m
-├── Control_output_vio.m
+├── Control_Argo_chain_vio.m
 └── 120353.7z
 ```
 
