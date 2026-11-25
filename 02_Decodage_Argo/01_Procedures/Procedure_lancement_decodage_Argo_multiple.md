@@ -1,12 +1,7 @@
 # Mise en place du décodeur Argo Coriolis sur plusieurs flotteurs
 
 ## 1. Objet
-La précédente procédure, **Procedure_lancement_decodage_Argo.md**, 
-décrit l’installation locale du décodeur Argo Coriolis sous Windows et
-sa mise en œuvre pour réaliser une démonstration de décodage sur un flotteur unique.
-
-
-La présente procédure a pour objectif de décrire l’installation et 
+La présente procédure a pour objectif de décrire l’installation locale et 
 la configuration du décodeur dans le cadre d’un décodage **multiple**, 
 permettant de traiter simultanément plusieurs flotteurs Argo.
 
@@ -183,13 +178,14 @@ Les répertoires csv , nc ,log, xml et iridium ont été créés manuellement lo
 
 ## 8. Lancement du décodage
 
-Ouvrir `Run_Argo_chain_multiple_vio.m`
-qui lance en seconde instance `Control_Argo_chain_multiple_vio.m`
+Le lancement du décodage multiple est réalisé à l'aide du script
+[Run_Argo_chain_multiple_vio.m](../02_Scripts_MATLAB/Run_Argo_chain_multiple_vio.m).
+Ce script lance en seconde instance le code [Control_Argo_chain_multiple.m](../02_Scripts_MATLAB/Control_Argo_chain_multiple.m).
 
 | Code Matlab | Description |
 |---|---|
-| `Run_Argo_chain_multiple_vio.m` | Ce code ajoute le chemin vers la fonction `start_decode.m` qui a été modifiée précédemment (cf paragraphe 6).  Puis il lance la fonction `start_decode.m`, et enfin il lance le script `Control_Argo_chain_multiple_vio.m` |
-| `Control_Argo_chain_multiple_vio.m` | Ce code permet de réaliser une figure par flotteur décodé.  La figure contient tous les profils verticaux de température et de salinité qui ont été décodés|
+| [Run_Argo_chain_multiple_vio.m](../02_Scripts_MATLAB/Run_Argo_chain_multiple_vio.m) | Ce code ajoute le chemin vers la fonction `start_decode.m` qui a été modifiée précédemment (cf paragraphe 6).  Puis il lance la fonction `start_decode.m`, et enfin il lance le script `Control_Argo_chain_multiple_vio.m` |
+| [Control_Argo_chain_multiple.m](../02_Scripts_MATLAB/Control_Argo_chain_multiple.m) | Ce code permet de réaliser une figure par flotteur décodé.  La figure contient tous les profils verticaux de température et de salinité qui ont été décodés|
 
 
 
