@@ -513,6 +513,13 @@ l'essai. Elles sont conservées ici comme référence de la configuration
 testée ; elles ne doivent pas être modifiées sans vérifier leur
 signification dans le manuel du décodeur et les besoins du traitement.
 
+**NB:**
+- FLOAT_TRANSMISSION_TYPE" : "1"  ==> transmission de type Argos
+- FLOAT_TRANSMISSION_TYPE" : "2"  ==> transmission de type Iridium Rudics
+- FLOAT_TRANSMISSION_TYPE" : "3"  ==> transmission de type Iridium SBD classique
+- FLOAT_TRANSMISSION_TYPE" : "4"  ==> transmission de type Iridium SBD bio
+ 
+
 ### 8.5. Chemins Linux conservés dans le fichier
 
 Le fichier contient encore plusieurs chemins de type Linux, notamment :
