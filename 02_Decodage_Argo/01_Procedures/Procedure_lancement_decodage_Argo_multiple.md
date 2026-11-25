@@ -183,13 +183,13 @@ Les répertoires csv , nc ,log, xml et iridium ont été créés manuellement lo
 
 ## 8. Lancement du décodage
 
-Ouvrir `Run_Argo_chain_vio.m`
-qui lance en seconde instance `Control_Argo_chain.m`
+Ouvrir `Run_Argo_chain_multiple_vio.m`
+qui lance en seconde instance `Control_Argo_chain_multiple_vio.m`
 
 | Code Matlab | Description |
 |---|---|
-| `Run_Argo_chain_vio.m` | Ce code ajoute le chemin vers la fonction `start_decode.m` qui a été modifiée précédemment (cf paragraphe 6). <br><br> Puis il lance la fonction `start_decode.m`, et enfin il lance à la fin le Control_Argo_chain_vio.m |
-| `Control_Argo_chain_vio.m` | Ce code permet de réaliser une figure par flotteur décodé. <br><br> La figure contient tous les profils verticaux de température et de salinité qui ont été décodés|
+| `Run_Argo_chain_multiple_vio.m` | Ce code ajoute le chemin vers la fonction `start_decode.m` qui a été modifiée précédemment (cf paragraphe 6).  Puis il lance la fonction `start_decode.m`, et enfin il lance le script `Control_Argo_chain_multiple_vio.m` |
+| `Control_Argo_chain_multiple_vio.m` | Ce code permet de réaliser une figure par flotteur décodé.  La figure contient tous les profils verticaux de température et de salinité qui ont été décodés|
 
 
 
