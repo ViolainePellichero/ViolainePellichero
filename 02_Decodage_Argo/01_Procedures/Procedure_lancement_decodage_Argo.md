@@ -4,7 +4,7 @@
 
 Cette procédure décrit la mise en place d'une installation locale du
 décodeur Argo Coriolis sous Windows, à partir du code MATLAB distribué
-sur SEANOE.
+sur Seanoe.
 
 L'installation utilise également certains fichiers de démonstration
 fournis dans le dépôt GitHub de la version conteneurisée. **La version
