@@ -638,7 +638,7 @@ end
 sgtitle('Float 6902892 - Ensemble des profils CTD');
 
 ```
-![Profils de température et de salinité décodés par la chaine Argo](Figures/figure_exemple.png)
+![Profils de température et de salinité décodés par la chaine Argo](figure_exemple.png)
 
 ## 11. Références et sources
 
