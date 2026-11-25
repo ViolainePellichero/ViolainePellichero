@@ -187,6 +187,15 @@ Ce script lance en seconde instance le code [Control_Argo_chain_multiple.m](../0
 | [Run_Argo_chain_multiple_vio.m](../02_Scripts_MATLAB/Run_Argo_chain_multiple_vio.m) | Ce code ajoute le chemin vers la fonction `start_decode.m` qui a été modifiée précédemment (cf paragraphe 6).  Puis il lance la fonction `start_decode.m`, et enfin il lance le script `Control_Argo_chain_multiple_vio.m` |
 | [Control_Argo_chain_multiple.m](../02_Scripts_MATLAB/Control_Argo_chain_multiple.m) | Ce code permet de réaliser une figure par flotteur décodé.  La figure contient tous les profils verticaux de température et de salinité qui ont été décodés|
 
+## 9. Résultat
+
+À la fin du traitement, vérifier la présence des fichiers NetCDF dans `C:\Coriolis_Argo_multiple\decArgo_demo\output\nc` et des logs dans `C:\Coriolis_Argo_multiple\decArgo_demo\output\log`
+NB : Le flotteur WMO 6903014 contient explicitement une anomalie déclarée  dans la salinité, dans les fichiers bruts 
+cf. `C:\Coriolis_Argo_multiple\decArgo_demo\config\decArgo_config_floats\json_float_meta_ir_sbd\6903014_meta.json` à la ligne 39 on peut lire    
+``` matlab
+"ANOMALY" : "wrong salinity, float recovered", 
+``` 
+
 
 
 
